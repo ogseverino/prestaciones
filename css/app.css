@@ -1,0 +1,349 @@
+/** VARIABLES */
+
+:root {
+    --primario: #2196f3;
+    --secundario: #26a69a;
+
+}
+
+body{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);  
+    font-family: 'Roboto', sans-serif;  
+}
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body h2 {
+    font-weight: 300;
+    color: var(--primario);
+    margin-top: 8px;
+}
+
+body span {
+    color: var(--primario);
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.container {
+    width: 85%;
+    margin: 50px auto;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lefthand-side {
+    width: 48%;
+}
+
+.righthand-side {
+    width: 48%;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#empresa {
+    width: 100%;
+    display: block;
+}
+
+.solicitante input:not([type='radio']) {
+    margin-bottom: 40px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.upper-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upper-row input {
+    width: 49%;
+}
+
+
+.date-selection {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.date-input-label {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.date-input-label label {
+    font-size: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+
+.datos input[type="text"], .datos input[type="date"]{
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid #757575;
+}
+
+::-webkit-datetime-edit-text {
+    font-family: 'Roboto', sans-serif;
+ }
+
+ .radio-group {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .radio-group label {
+    margin: 0 16px;
+ }
+
+ .lower-section {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ table{
+    border-collapse: collapse;
+ }
+
+ th {
+    font-weight: 300;
+    color: var(--primario);
+    padding: 5px;
+    text-align: left;
+
+ }
+
+ .lower-left {
+    width: 49%;
+    height: 100%;
+ }
+
+ .lower-right {
+    width: 49%;
+ }
+
+ thead {
+    border-bottom: 1px solid lightgray;
+ }
+
+ table thead tr th{
+    border-bottom: 2px solid lightgray;
+}
+
+ .table-input {
+    border: none;
+    padding: 8px;
+    margin-left: 3px;
+    border-bottom: 1px solid  gray;
+    width: 95%;
+    background: none;
+ }
+
+ .table-input:disabled{
+    border-bottom: 1px dotted gray;
+ }
+
+ .tdNumber {
+    color: var(--primario);
+ }
+
+ .sumatoriaSalarios table {
+    width: 100%;
+}
+
+ .sumatoriaSalarios td {
+    text-align: center;
+    padding: 2px;
+ }
+
+ .preavisado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+ }
+
+ .message{
+    flex: calc(33.3%);
+ }
+
+ .toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .monto{
+    flex: calc(33.3%);
+    text-align: center;
+ }
+
+
+ .monto span {
+    color: gray;
+ }
+
+ p {
+    color: gray;
+    margin: 0.5rem;
+ }
+
+ .sub-total{
+    display: flex;
+    padding: 1rem;
+    background-color: #eeeeee;
+ }
+
+ .subtotal-text {
+    flex: 60%;
+    text-align: right;
+ }
+
+ .subtotal-amount {
+    flex: 40%;
+    text-align: center;
+ }
+
+ .sub-total span{
+    color: black;
+    font-weight: bold;
+ }
+
+ .tiempo-laborado span {
+    text-align: center;
+    display: block;
+ }
+
+ .tiempo-laborado{
+    padding: 1rem;
+    background-color: lightgray;
+ }
+
+ .recibir {
+    background-color: var(--secundario);
+ }
+
+ .recibir span {
+    color: white;
+ }
+
+ .btns button{
+    border: none;
+    color: white;
+    border-radius: 2px;
+    background-color: #26a69a;
+    padding: 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    width: 10rem;
+    margin: 0 auto;
+ }
+
+ .btnCalcular {
+    display: block;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--primario);
+    color: white;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+
+ a{
+    color: var(--primario);
+ }
+
+ /** Toggle **/ 
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--secundario);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--secundario);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

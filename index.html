@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+            rel="stylesheet">
+           
+        <link rel="stylesheet" href="css/app.css">
+        <title>Prestaciones Laborales</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <section class="card solicitante">
+                <h2>Datos del Solicitante</h2>
+                <div class="datos">
+                    <div class="lefthand-side">
+                        <div class="datos-usuario">
+                            <div class="upper-row">
+                                <input type="text" placeholder="Documento Identidad"
+                                    id="identidad">
+                                <input type="text" placeholder="Nombre" id="nombre">
+                            </div>
+                            <input type="text" placeholder="Nombre de la Empresa"
+                                id="empresa">
+                        </div>
+
+                        <h2>Seleccion de Fechas</h2>
+
+                        <div class="date-selection">
+                            <div class="date-input-label">
+                                <label for="ingreso">Fecha de Ingreso:</label>
+                                <input type="date"
+                                    id="ingreso">
+                            </div>
+
+                            <div class="date-input-label">
+                                <label for="ingreso">Fecha de Salida:</label>
+                                <input type="date"
+                                    id="salida">
+                            </div>
+
+                        </div>
+                    </div><!--Close lefthand-side-->
+
+                    <div class="righthand-side">
+                        <div class="radio-group">
+                            <span>Seleccione el Periodo</span>
+                            <div class="buttons">
+                                <div class="radio-button">
+                                    <input type="radio" id="mensual" name="periodo" checked>
+                                    <label for="mensual">Mensual</label>
+                                </div>
+
+                                <div class="radio-button">
+                                    <input type="radio" id="quincenal" name="periodo">
+                                    <label for="quincenal">Quincenal</label>
+                                </div>
+
+                                <div class="radio-button">
+                                    <input type="radio" id="semanal" name="periodo">
+                                    <label for="semanal">Semanal</label>
+                                </div>
+
+                                <div class="radio-button">
+                                    <input type="radio" id="diario" name="periodo">
+                                    <label for="diario">Diario</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <span>Seleccione el Tipo de Calculo</span>
+                            <div class="buttons">
+                                <div class="radio-button">
+                                    <input type="radio" id="ordinario" name="calculo" checked> 
+                                    <label for="ordinario">Ordinario</label>
+                                </div>
+
+                                <div class="radio-button">
+                                    <input type="radio" id="intermitente" name="calculo">
+                                    <label for="intermitente">Intermitente</label>
+                                </div>
+                            </div>
+                            <span id="descripcion-calculo">Jornada ordinaria es
+                                la ejecutada por trabajadores dentro de un
+                                período que no exceda de ocho (8) horas al día
+                                ni de cuarenta y cuatro (44) a la semana.
+                                
+                                <br><br>
+                                <span><b>Referencias</b> <a href="http://mt.gob.do/images/docs/biblioteca/codigo_de_trabajo.pdf#page=62">Art. 147</a> del Codigo del Trabajo</span>
+                            </span>
+                        </div>
+                    </div><!--Clsose right hand side-->
+
+
+                </div>
+            </section><!--Close card-->
+
+            <section class="lower-section">
+                <div class="lower-left card">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>Salarios</th>
+                            <th>Comisiones</th>
+                            <th>Totales</th>
+                            <th>Completar</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdNumber">1</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-1" class="table-input" data-id="1">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-1" class="table-input" data-id="1">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-1" class="table-input" data-id="1" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="1" class=".btnCalcular" style="display: none;">
+                                        &darr;
+                                    </button>
+                                    <input type="hidden" id="dataId" value="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">2</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-2" class="table-input" data-id="2">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-2" class="table-input" data-id="2">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-2" class="table-input" data-id="2" data-type="total">
+                                </td>
+                                <td>
+                                
+                                    <button class="btnCalcular" data-id="2" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="2">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">3</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-3" class="table-input" data-id="3">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-3" class="table-input" data-id="3">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-3" class="table-input" data-id="3" data-type="total">
+                                </td>
+                                <td>
+                                
+                                    <button class="btnCalcular" data-id="3" style="display: none;"> 
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="3">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">4</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-4" class="table-input" data-id="4">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-4" class="table-input" data-id="4">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-4" class="table-input" data-id="4" data-type="total">
+                                </td>
+                                <td>
+                                
+                                    <button class="btnCalcular" data-id="4" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="4">
+                                    
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="tdNumber">5</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-5" class="table-input" data-id="5">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-5" class="table-input" data-id="5">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-5" class="table-input" data-id="5" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="5" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">6</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-6" class="table-input" data-id="6">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-6" class="table-input" data-id="6">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-6" class="table-input" data-id="6" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="6" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">7</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-7" class="table-input" data-id="7">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-7" class="table-input" data-id="7">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-7" class="table-input" data-id="7" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="7" style="display: none;"> 
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="7">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">8</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-8" class="table-input" data-id="8"> 
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-8" class="table-input" data-id="8">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-8" class="table-input" data-id="8" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="8" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="8">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">9</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-9" class="table-input" data-id="9">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-9" class="table-input" data-id="9">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-9" class="table-input" data-id="9" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="9" style="display: none;">
+                                        &darr;                         </button>
+                                    <input type="hidden" id="dataId" value="9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">10</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-10" class="table-input" data-id="10">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-10" class="table-input" data-id="10">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-10" class="table-input" data-id="10" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="10" style="display: none;">
+                                        &darr;                          </button>
+                                    <input type="hidden" id="dataId" value="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">11</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-11" class="table-input" data-id="11">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-11" class="table-input" data-id="11">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-11" class="table-input" data-id="11" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="11" style="display: none;">
+                                        &darr;                          </button>
+                                    <input type="hidden" id="dataId" value="11">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdNumber">12</td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="salario-12" class="table-input" data-id="12">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="comision-12" class="table-input" data-id="12">
+                                </td>
+                                <td>
+                                    <input type="text" disabled placeholder="0.00" id="total-12" class="table-input" data-id="12" data-type="total">
+                                </td>
+                                <td>
+                                    <button class="btnCalcular" data-id="12" style="display: none;">
+                                        &darr;
+                                    </button>
+                                    <input type="hidden" id="dataId" value="12">
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div><!--Close lower left-->
+
+                <div class="lower-right ">
+                    <div class="sumatoriaSalarios card">
+                        <table>
+                            <thead>
+                                <th>Sumatoria de los salarios</th>
+                                <th>Salario promedio mensual</th>
+                                <th>Salario promedio diario</th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td id="allSalaries">RD$0.00</td>
+                                    <td id="averageMonthly">RD$0.00</td>
+                                    <td id="averageDaily">RD$0.00</td>
+                                </tr>
+                            </tbody>
+                        
+                        </table>
+                        
+                    </div>
+
+                    <div class="outputs card">
+                        <div class="preavisado">
+                            <div class="message">
+                                <span>¿Ha sido usted pre-avisado?</span>
+                            </div>
+
+                            <div class="toggle">
+                                <label class="switch">
+                                    <input type="checkbox" onclick="this.value = !this.value;" id="radioPreaviso">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="monto">
+                                <span id="montoPreaviso">RD$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cesantia">
+                            <div class="preavisado">
+                                <div class="message">
+                                    <span>¿Desea incluir cesantía?</span>
+                                </div>
+    
+                                <div class="toggle">
+                                    <label class="switch">
+                                        <input type="checkbox" id="radioCesantia">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+    
+                                <div class="monto">
+                                    <p>Art. 80 C.T. antes 1992.:</p>
+                                    <p>RD$0.00</p>
+                                    <p>Art. 80 C.T. después 1992.:</p>
+                                    <p id="cesantiaText">RD$0.00</p>
+                                </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preavisado">
+                        <div class="message">
+                            <span>¿Ha tomado las vacaciones correspondientes al último año?
+                            </span>
+                        </div>
+
+                        <div class="toggle">
+                            <label class="switch">
+                                <input type="checkbox" id="radioVacaciones">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="monto">
+                            <span id="vacacionesText">RD$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="sub-total">
+                        <div class="subtotal-text">
+                            <span>Sub-Total.: </span>
+                        </div>
+
+                        <div class="subtotal-amount">
+                            <span id="subtotalText">RD$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="preavisado">
+                        <div class="message">
+                            <span>¿Incluir salario de navidad?
+                            </span>
+                        </div>
+
+                        <div class="toggle">
+                            <label class="switch">
+                                <input type="checkbox"  id="radioNavidad">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="monto">
+                            <span id="navidadText">RD$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="sub-total">
+                        <div class="subtotal-text">
+                            <span>Tiempo Laborado: </span>
+                        </div>
+
+                        <div class="subtotal-amount">
+                            <span id="date-difference"></span>
+                        </div>
+                    </div>
+
+                    <div class="sub-total recibir">
+                        <div class="subtotal-text">
+                            <span>Total a Recibir: </span>
+                        </div>
+
+                        <div class="subtotal-amount">
+                            <span id="totalText">RD$0.00</span>
+                        </div>
+                    </div>
+
+                </div> <!--Close lower right-->
+
+                <input type="hidden" id="totalMonths">
+
+                <div class="btns card">
+                    <button id="calcular">Calcular</button>
+                </div>
+
+            </section>
+        </div>
+
+        <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+        <script src="js/moment-precise-range.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
